@@ -8,9 +8,19 @@
 <html>
     <head>
          <%@include file="WEB-INF/jspf/favicon.jspf" %>
+         <!--css - Google Fonts-->
          <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-        <link href="css/footer-css.css" rel="stylesheet">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+         <!--css - footer-->
+         <link href="css/footer-css.css" rel="stylesheet">
+         
+         <link href="css/form.css" rel="stylesheet">
+         
+         <link href="css/style.css" rel="stylesheet">
+     
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         
         <title>Tabela Price</title>
     </head>
     <body>
@@ -18,15 +28,10 @@
         <%@include file="WEB-INF/jspf/menu.jspf" %>
         
          <!-- VÁRIAVEIS -->
-              
+          
        
-               
-          <%
-              
- 
-       
-        DecimalFormat df = new DecimalFormat("#.##");       
-        double valor_principal = 0 ; 
+        <%DecimalFormat df = new DecimalFormat("#.##");     
+        double valor_principal = 0 ;
         double parcelas = 0 ;
         double taxa_juros=0;
         double saldo_devedor = 0;
@@ -44,17 +49,14 @@
    
         
             try{parcelas = Double.parseDouble(request.getParameter("periodo")); 
-            taxa_juros = Double.parseDouble(request.getParameter("juros")); 
+            taxa_juros = Double.parseDouble(request.getParameter("juros"));
             valor_principal = Double.parseDouble(request.getParameter("valorprincipal"));
-             saldo_devedor = valor_principal;
+            saldo_devedor = valor_principal;
             
             }
             catch(Exception e){}
-            
-            
-         %>
-
-            
+     
+       %>
  
         <!--VARIÁVEIS -->
         
@@ -62,58 +64,56 @@
             
             <br><h2>Tabela Price</h2><br>
         
-        <div class="card text-center">
-  <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Calculadora</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sobre</a>
-      </li>
-      
-    </ul>
-  </div>
-  <div class="card-body">
-   
-      <br>
-      
-            
-          <br>
-   
+       <div class="card text-center" class="form"  style= "width: 60%" position: relative>
+       <div class="card-header" >
+       Calculadora
+       </div>
+       <div class="card-body">
+    
+       </div>
+    
+           
           <center>
-              <form style="text-shadow: 1px 0px 0px #122b68, -1px 0px 0px #122b68 0px 1px 0px #122b68 0px -1px 0px #122b68; font-family: tahoma; color: black; position: relative; width: 20%">
+              <form class='form' class='style'>
            <div class='row'>
                <div class='col'>
                    <p>Valor Principal: </p>
-                   <input type='text' style= 'width: 200px' class= form-control placeholder='R$' name='valorprincipal'/><br></div>
+                   <input type='text' class= form-control placeholder='R$' name='valorprincipal'/><br></div>
                </div>
            <div class='row'>
                <div class='col'>
                    <p>Parcelas: </p>
-                   <input type='text' style= 'width: 200px' class= form-control placeholder='meses'  name='periodo'/><br></div>
+                   <input type='text' class= form-control placeholder='meses'  name='periodo'/><br></div>
                </div>
            <div class='row'>
                <div class='col'>
                    <p>Taxa de Juros: </p>
-                   <input type='text' style= 'width: 200px' class= form-control placeholder='%' name='juros'/><br></div>
+                   <input type='text' class= form-control placeholder='%' name='juros'/><br></div>
                </div>
                   <input class="btn btn-primary" type="submit" value="Calcular">
                   </form>
+              <br>
               </center>
-           </div>    
+           </div>
+            <br>
           </div>
           
           
            
           
-  <table border="2">
-          
-              <tr> <th><h4>Período(mês)</h4></th>  <th><h4>Prestação</h4></th>  <th><h4> Juros </h4></th>  <th><h4> Amortizacao </h4></th>  <th><h4> Saldo devedor </h4></th> </tr> 
-              
-                    
-        
-         
+         <table class="table table-hover table-style">
+             
+           <thead>
+            <tr class="table-secondary">
+               <th scope="col">Período</th>
+               <th scope="col">Prestação</th>
+               <th scope="col">Juros</th>
+               <th scope="col">Amortização</th>
+               <th scope="col">Saldo Devedor</th>
+            </tr>
+        </thead>
+        <tbody>
+  
             <!-- Repetição das celulas da tabela -->            
             
                    <%for(int i=1; i<= parcelas; i++){%>
@@ -132,20 +132,23 @@
                 total_saldodevedor = total_saldodevedor + saldo_devedor;
                  
                 %>
-           
-                       <tr>
-                      <td><h4> <%= i %> </h4></td>
-                      <td><h4> <%= df.format(prestacao) %> </h4></td>
-                      <td><h4> <%= df.format(juros_periodo) %> </h4></td>
-                      <td><h4> <%= df.format(amortizacao) %> </h4></td>
-                      <td><h4> <%= df.format(saldo_devedor) %> </h4></td>
-           
-         
-           
-               
+      
+      <tr>
+      
+      <th scope="row"><%= i %></th>
+      <td><%= df.format(prestacao) %></td>
+      <td><%= df.format(juros_periodo) %></td>
+      <td><%= df.format(amortizacao) %></td>
+      <td><%= df.format(saldo_devedor) %></td>
+        
+    </tr>
+    
+  </tbody>
+              
                 <%}%>
+                
            </table>
-                    
+           <hr>
                           <h4>Total</h4>
                           <h4>Prestação: <%=df.format(total_prestacao)%></h4>
                           <h4>Juros: <%=df.format(total_juros)%></h4>

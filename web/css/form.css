@@ -1,0 +1,20 @@
+.form{
+   
+    font-family: 'Roboto', sans-serif;
+    color: black; 
+    position: relative; 
+    width: 60%; 
+    
+}
+
+.sytle{
+    width: 200px;
+}
+
+.table-style{
+     
+     font-family: 'Roboto', sans-serif;
+     position: relative;
+     align-content: center;
+     
+}
