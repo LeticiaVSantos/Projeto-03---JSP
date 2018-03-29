@@ -1,15 +1,17 @@
 <%@ page pageEncoding="UTF-8" %>
 
- <hr><center><footer class="footer">
-            
-            <div class="position-absolut">
-            
+ <hr>
+ <center>
+     <footer class="footer-css">
+
+
             <br>
                     
             <h5>JurosWeb</h5>
             
             <p>© 2018 Copyright:</p>
-            <a href='https://github.com/LeticiaVSantos/Projeto-03---JSP.git'</a>Projeto 03 JSP
              
-            </div>
+            <a href='https://github.com/LeticiaVSantos/Projeto-03---JSP.git'</a>Projeto 03 JSP
+            
+    
             </footer></center>

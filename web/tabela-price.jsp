@@ -8,6 +8,8 @@
 <html>
     <head>
          <%@include file="WEB-INF/jspf/favicon.jspf" %>
+         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="css/footer-css.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Tabela Price</title>
     </head>
