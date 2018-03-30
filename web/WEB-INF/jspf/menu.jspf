@@ -7,7 +7,7 @@
 
     <nav class="navbar sticky-top navbar navbar-expand-lg navbar navbar-dark bg-dark">
          <img src="Imagens/cifrao.png" width="30" height="30" alt="JurosWeb">
-         <a class="navbar-brand" href="home.jsp"> JurosWeb </a>
+         <a class="navbar-brand" href="home.jsp"> FinanceiraWeb </a>
          
         <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
@@ -27,13 +27,16 @@
                 <a class="nav-link" href="sobre.jsp">Sobre</a>
             </li>
             </ul>
+            
             <span class="navbar-text">
                JurosWeb, a solução.
             </span>
         </div>
+         
     </nav>
          
-         
+
+        
     
 
 

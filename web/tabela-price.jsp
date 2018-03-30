@@ -18,7 +18,8 @@
          <link href="css/form.css" rel="stylesheet">
          
          <link href="css/style.css" rel="stylesheet">
-     
+   
+         
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          
         <title>Tabela Price</title>
@@ -62,6 +63,8 @@
         
         <center>
             
+            
+            
             <br><h2>Tabela Price</h2><br>
         
        <div class="card text-center" class="form"  style= "width: 60%" position: relative>
@@ -78,6 +81,7 @@
            <div class='row'>
                <div class='col'>
                    <p>Valor Principal: </p>
+                    
                    <input type='text' class= form-control placeholder='R$' name='valorprincipal'/><br></div>
                </div>
            <div class='row'>
