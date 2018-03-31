@@ -56,12 +56,14 @@
     <h2>Sistema Financeiro</h2>
     <h4>O jeito mais prático e eficiente para o cálculo financeiro</h4>
   </div>
+    
   <div class="row slideanim">
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
           <h1>SAC</h1>
         </div>
+          
         <div class="panel-body">
             <p>Neste sistema o saldo devedor é reembolsado em valores de amortização iguais.</p>
             <p>Desta forma, no sistema SAC o valor das prestações é decrescente, já que os juros diminuem a cada prestação.</p>
@@ -70,7 +72,7 @@
         </div>
         <div class="panel-footer">
          
-          <input class="btn btn-lg" type="submit"value="Calcular">
+            <a href="amortizacao-constante.jsp" class="btn btn-lg" role="button">Calcular</a>
         </div>
       </div>      
     </div>     
@@ -87,7 +89,7 @@
         </div>
         <div class="panel-footer">
          
-         <input class="btn btn-lg" type="submit"value="Calcular">
+          <a href="amortizacao-americana.jsp" class="btn btn-lg" role="button">Calcular</a>
         </div>
       </div>      
     </div>       
@@ -103,7 +105,7 @@
         </div>
         <div class="panel-footer">
          
-          <input class="btn btn-lg" type="submit"value="Calcular">
+             <a href="tabela-price.jsp" class="btn btn-lg" role="button">Calcular</a>
         </div>
       </div>      
     </div>    

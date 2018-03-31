@@ -16,12 +16,11 @@
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
          
+         
          <link href="css/navbar.css" rel="stylesheet">
          
          <link href="css/form.css" rel="stylesheet">
-         
-         <link href="css/style.css" rel="stylesheet">
-   
+ 
          
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          
@@ -104,18 +103,16 @@
             <br>
           </div>
           
-          
-           
-          
-         <table class="table table-hover table-style">
+         <table class="container table-hover table-style">
              
-           <thead>
-            <tr class="table-secondary">
-               <th scope="col">Período</th>
-               <th scope="col">Prestação</th>
-               <th scope="col">Juros</th>
-               <th scope="col">Amortização</th>
-               <th scope="col">Saldo Devedor</th>
+        <thead class="table-secondary" class="table-active">
+            <tr>
+               <th scope="row">Período</th>
+               <th scope="row">Saldo Devedor</th>
+               <th scope="row">Amortização</th>
+               <th scope="row">Juros</th>
+               <th scope="row">Prestação</th>
+              
             </tr>
         </thead>
         <tbody>
@@ -142,18 +139,18 @@
       <tr>
       
       <th scope="row"><%= i %></th>
-      <td><%= df.format(prestacao) %></td>
-      <td><%= df.format(juros_periodo) %></td>
-      <td><%= df.format(amortizacao) %></td>
       <td><%= df.format(saldo_devedor) %></td>
-        
+      <td><%= df.format(amortizacao) %></td>
+      <td><%= df.format(juros_periodo) %></td>
+      <td><%= df.format(prestacao) %></td>
+     
     </tr>
     
   </tbody>
               
                 <%}%>
                 
-           </table>
+         </table><div class="container"></div>
            <hr>
                           <h4>Total</h4>
                           <h4>Prestação: <%=df.format(total_prestacao)%></h4>

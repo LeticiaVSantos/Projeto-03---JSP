@@ -51,16 +51,7 @@
       height: 100%;
       margin-bottom: 10px;
   }
-  .carousel-control.right, .carousel-control.left {
-      background-image: none;
-      color: #12285A;
-  }
-  .carousel-indicators li {
-      border-color: #f4511e;
-  }
-  .carousel-indicators li.active {
-      background-color: #f4511e;
-  }
+ 
   .item h4 {
       font-size: 19px;
       line-height: 1.375em;
