@@ -1,17 +1,50 @@
 <%@ page pageEncoding="UTF-8" %>
 
- <hr>
- <center>
-     <footer class="footer-css">
-
-
-            <br>
-                    
-            <h5>FinanceiraWeb</h5>
+ <footer class="container-fluid bg-grey text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <h3>FinanceiraWeb</h3>
             
             <p>© 2018 Copyright:</p>
              
             <a href='https://github.com/LeticiaVSantos/Projeto-03---JSP.git'</a>Projeto 03 JSP
-            
-    
-            </footer></center>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Adicionar rolagem suave a todos os links no link navbar + footer
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Certifique-se de que this.hash tenha um valor antes de substituir o comportamento padrão
+    if (this.hash !== "") {
+      // Previne o comportamento padrão de clique da âncora
+      event.preventDefault();
+
+      // Armazena hash
+      var hash = this.hash;
+
+     
+      // Usando o método animate () do jQuery para adicionar rolagem de página suave
+      // O número opcional (900) especifica o número de milissegundos necessários para rolar até a área especificada
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+       // Adicionar hash (#) ao URL quando terminar a rolagem (comportamento de clique padrão)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+});
+</script>

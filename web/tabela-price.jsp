@@ -8,12 +8,15 @@
 <html>
     <head>
          <%@include file="WEB-INF/jspf/favicon.jspf" %>
-         <!--css - Google Fonts-->
-         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
          
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-         <!--css - footer-->
-         <link href="css/footer-css.css" rel="stylesheet">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         
+         <link href="css/navbar.css" rel="stylesheet">
          
          <link href="css/form.css" rel="stylesheet">
          
@@ -69,7 +72,6 @@
         
        <div class="card text-center" class="form"  style= "width: 60%" position: relative>
        <div class="card-header" >
-       Calculadora
        </div>
        <div class="card-body">
     
@@ -162,5 +164,6 @@
         <br>
         
          <%@include file="WEB-INF/jspf/footer.jspf" %>
+
     </body>
 </html>

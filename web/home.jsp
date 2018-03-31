@@ -14,9 +14,11 @@
     </head>
     <body>
         
+         <%@include file="WEB-INF/jspf/menu.jspf" %>
+        
          <%@include file="WEB-INF/jspf/cabecalho.jspf" %>
          
          
-        
+         <%@include file="WEB-INF/jspf/footer.jspf" %>
     </body>
 </html>
