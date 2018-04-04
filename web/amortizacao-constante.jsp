@@ -5,41 +5,40 @@
     <head>
         <%@include file="WEB-INF/jspf/favicon.jspf" %>
         
-         <meta name="viewport" content="width=device-width, initial-scale=1">
-         
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-         
-         <link href="css/navbar.css" rel="stylesheet">
-            
+         <%@include file="WEB-INF/jspf/cabecalho.jspf" %>
          
         <title>Amortização Constante</title>
     </head>
     <body>
          <%@include file="WEB-INF/jspf/menu.jspf" %>
-              <%DecimalFormat df = new DecimalFormat("#.##");     
-        double valor_principal = 0 ;
-        int parcelas = 0 ;
-        double taxa_juros=0;
-        double saldo_devedor = 0;
-        double amortizacao=0;
-        
-            try{parcelas = Integer.parseInt(request.getParameter("periodo")); 
-            taxa_juros = Double.parseDouble(request.getParameter("juros"));
-            valor_principal = Double.parseDouble(request.getParameter("valorprincipal"));
-            saldo_devedor = valor_principal;
-            
+         
+        <%
+            DecimalFormat df = new DecimalFormat("#.##");
+            double valor_principal = 0;
+            double periodo = 0;
+            double taxa_juros = 0;
+            double juros_periodo = 0;
+            double total_juros = 0;
+            double amortizacao = 0;
+            double amortizacao_aux = 0;
+            double prestacao = 0;
+            double prestacao_total = 0;
+            double saldo_devedor = 0;
+
+            try {
+                periodo = Double.parseDouble(request.getParameter("periodo"));
+                taxa_juros = Double.parseDouble(request.getParameter("juros"));
+                valor_principal = Double.parseDouble(request.getParameter("valorprincipal"));
+                amortizacao = valor_principal / periodo;
+                saldo_devedor = valor_principal;
+            } catch (Exception e) {
             }
-            catch(Exception e){}
-     
-       %>
+
+        %>
          <center>
            <br><h2>Amortização Constante</h2><br>
         
-       <div class="card text-center" class="form"  style= "width: 60%" position: relative>
+       <div class="card text-center" class="form"  style= "width: 30%" position: relative>
        <div class="card-header" >
        </div>
        <div class="card-body">
@@ -87,56 +86,41 @@
         </thead>
         <tbody>
   
+            <%for(int i=1; i<= periodo; i++){%>
                      
-            <% amortizacao = valor_principal/parcelas;
-               
-           
-            %>
-                   <%for(int i=1; i<= parcelas; i++){%>
-             
-                <% 
-               
-       
-                double [] valor_mensal =  new double [400];
-                double []juros_mensal =  new double[400];
-                double []saldo =  new double[400];
-                if(i==parcelas)
-                {
-                break;
-                }
-                if(i==1)
-                {
-                valor_mensal[i] = amortizacao+ (taxa_juros/100 * (valor_principal -amortizacao));   
-                }
-                if(i>1)
-                    
-                {valor_mensal[i] = amortizacao+ (taxa_juros/100 * (valor_principal -(i-1)*amortizacao));}
-               juros_mensal[i] = valor_mensal[i] - amortizacao;
-                saldo[i] = valor_principal - valor_mensal[i];
-                
+                              <%
+                                juros_periodo = (periodo - i + 1) * (taxa_juros / 100) * (amortizacao);
+                                prestacao = amortizacao + juros_periodo;
+                                saldo_devedor = saldo_devedor - amortizacao;
+                                %>
+                      
+                           <tr>
+                      <td> <%=i%> </td>
+                      <td> <%= df.format(saldo_devedor) %> </td>
+                      <td> <%= df.format(amortizacao) %> </td>
+                      <td> <%= df.format(juros_periodo) %> </td>
+                      <td> <%= df.format(prestacao) %> </td>
+                      
+                      
+                           </tr>
+                          
+               <% amortizacao_aux = amortizacao_aux + amortizacao;
+                            total_juros = total_juros + juros_periodo;
+                            prestacao_total = prestacao_total + prestacao; %>
+                        <%}%>
+                     
+            </table>
                  
-                
-                %>
-      
-      <tr>
-      
-      <th scope="row"><%= i %></th>
-      <td><%= df.format(saldo[i]) %></td>
-      <td><%= df.format(amortizacao) %></td>
-      <td><%= df.format(juros_mensal[i]) %></td>
-      <td><%= df.format(valor_mensal[i]) 
-          %></td>
-     
-    </tr>
-    
-  </tbody>
-              
-                <%}%>
-                
-         </table><
+                        <hr>
+                                          
+                 <!-- TABELA - FIM -->
+                 <h4>Total:</h4> 
+                           <h4>Amortização : <%= df.format(amortizacao_aux)%></h4>
+                    <h4>Juros : <%= df.format(total_juros)%></h4>
+                    <h4>Prestação : <%= df.format(prestacao_total)%> </h4>
+            
+                <br>
         
-        
-      
           <%@include file="WEB-INF/jspf/footer.jspf" %>
           
     </body>

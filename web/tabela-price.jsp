@@ -9,20 +9,8 @@
     <head>
          <%@include file="WEB-INF/jspf/favicon.jspf" %>
          
-         <meta name="viewport" content="width=device-width, initial-scale=1">
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <%@include file="WEB-INF/jspf/cabecalho.jspf" %>
          
-         
-         <link href="css/navbar.css" rel="stylesheet">
-         
-         <link href="css/form.css" rel="stylesheet">
- 
-         
-         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          
         <title>Tabela Price</title>
     </head>
@@ -32,44 +20,11 @@
         
          <!-- VÁRIAVEIS -->
           
-       
-        <%DecimalFormat df = new DecimalFormat("#.##");     
-        double valor_principal = 0 ;
-        double parcelas = 0 ;
-        double taxa_juros=0;
-        double saldo_devedor = 0;
-        double amortizacao=0;
-        double juros_periodo=0;
-        double prestacao = 0;
-        double txjrsdivcem1 = 0;
-        double txjrsdivcem2 = 0;
-        double prestacao_aux = 0;
-        double primeira_amortizacao = 0;
-        double total_prestacao = 0;
-        double total_juros = 0;
-        double total_amortizacao = 0;
-        double total_saldodevedor = 0;
-   
-        
-            try{parcelas = Double.parseDouble(request.getParameter("periodo")); 
-            taxa_juros = Double.parseDouble(request.getParameter("juros"));
-            valor_principal = Double.parseDouble(request.getParameter("valorprincipal"));
-            saldo_devedor = valor_principal;
-            
-            }
-            catch(Exception e){}
-     
-       %>
- 
-        <!--VARIÁVEIS -->
-        
-        <center>
-            
-            
-            
+          <center>
+          
             <br><h2>Tabela Price</h2><br>
-        
-       <div class="card text-center" class="form"  style= "width: 60%" position: relative>
+            <div class="container">
+       <div class="card text-center" class="form"  style= "width: 30%" position: relative>
        <div class="card-header" >
        </div>
        <div class="card-body">
@@ -103,7 +58,7 @@
             <br>
           </div>
           
-         <table class="container table-hover table-style">
+        <table class="container table-hover table-style">
              
         <thead class="table-secondary" class="table-active">
             <tr>
@@ -115,12 +70,42 @@
               
             </tr>
         </thead>
-        <tbody>
-  
+         
+       
+        <%DecimalFormat df = new DecimalFormat("#.##");     
+        double valor_principal = 0 ;
+        double parcelas = 0 ;
+        double taxa_juros=0;
+        double saldo_devedor = 0;
+        double amortizacao=0;
+        double juros_periodo=0;
+        double prestacao = 0;
+        double txjrsdivcem1 = 0;
+        double txjrsdivcem2 = 0;
+        double prestacao_aux = 0;
+        double primeira_amortizacao = 0;
+        double total_prestacao = 0;
+        double total_juros = 0;
+        double total_amortizacao = 0;
+        double total_saldodevedor = 0;
+   
+        %>
+        
+           <%try{parcelas = Double.parseDouble(request.getParameter("periodo")); 
+            taxa_juros = Double.parseDouble(request.getParameter("juros"));
+            valor_principal = Double.parseDouble(request.getParameter("valorprincipal"));
+            saldo_devedor = valor_principal;
+           }
+            catch(Exception ex){}%>
+     
+ 
+       
+        
             <!-- Repetição das celulas da tabela -->            
             
                    <%for(int i=1; i<= parcelas; i++){%>
-              
+                   
+                  
                 <%  txjrsdivcem1 = taxa_juros/100;
                 txjrsdivcem2 = 1 + txjrsdivcem1;
                 prestacao_aux = Math.pow(txjrsdivcem2, parcelas);        
@@ -136,7 +121,10 @@
                  
                 %>
       
-      <tr>
+       <tbody>
+  
+            
+            <tr>
       
       <th scope="row"><%= i %></th>
       <td><%= df.format(saldo_devedor) %></td>
@@ -150,7 +138,9 @@
               
                 <%}%>
                 
-         </table><div class="container"></div>
+          </table>
+                
+                <div class="container"></div>
            <hr>
                           <h4>Total</h4>
                           <h4>Prestação: <%=df.format(total_prestacao)%></h4>
