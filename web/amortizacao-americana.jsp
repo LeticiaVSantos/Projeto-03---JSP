@@ -12,5 +12,7 @@
          <%@include file="WEB-INF/jspf/menu.jspf" %>
         
          <%@include file="WEB-INF/jspf/footer.jspf" %>
+         <a href="javascript:window.history.go(-1)">Voltar</a>
+
     </body>
 </html>
