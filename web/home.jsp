@@ -10,6 +10,7 @@
       
         
         <title>FinanceiraWeb</title>
+        
     </head>
     <body>
         
@@ -17,7 +18,7 @@
         
          
          
-         <div class="jumbotron text-center">
+  <div class="jumbotron text-center">
   <h1>FinanceiraWeb</h1> 
   <p>Especializada em cálculos financeiros.</p> 
   
@@ -33,6 +34,8 @@
           <p> A Instituição FinanceiraWeb opera administrando um equilíbrio delicado entre moedas, prazos e taxas negociados para os capitais que capta e para os que aplicam no mercado, respeitando os critérios e normas estabelecidos pelas agências reguladoras/supervisoras de cada mercado onde atue.</p></h4><br>
      
     </div>
+      
+    <!-- Card (Sobre a missão e visão) -->  
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-signal logo"></span>
     </div>
@@ -68,8 +71,7 @@
         </div>
           
         <div class="panel-body">
-            <p>Neste sistema o saldo devedor é reembolsado em valores de amortização iguais.</p>
-            <p>Desta forma, no sistema SAC o valor das prestações é decrescente, já que os juros diminuem a cada prestação.</p>
+            
             <p>O valor da amortização é calculada dividindo-se o valor do principal pelo número de períodos de pagamento, ou seja, de parcelas.</p>
          
         </div>
@@ -85,7 +87,7 @@
           <h1>Americana</h1>
         </div>
         <div class="panel-body">
-          <p> Uma forma de pagamento de empréstimos que se caracteriza pelo pagamento apenas dos juros da dívida, deixando o valor da dívida constante, que pode ser paga em apenas um único pagamento.</p>
+          
           <p>Esse sistema de amortização tem a vantagem em relação ao sistema de pagamento único, pois nele não há incidência de juros sobre juros.</p>
          
          
@@ -103,7 +105,7 @@
         </div>
         <div class="panel-body">
           <p> É um método usado em amortização de empréstimo cuja principal característica é apresentar prestações (ou parcelas) iguais. </p>
-          <p>O método foi apresentado em 1771 por Richard Price em sua obra "Observações sobre Pagamentos Remissivos"</p>
+          
           
         </div>
         <div class="panel-footer">
@@ -123,26 +125,29 @@
    <div class="row text-center slideanim">
     <div class="col-sm-4">
       <div class="thumbnail">
-        <img src="Imagens/camera-icon.png" alt="João Paulo" width="400" height="300">
+        <img src="Imagens/joao-paulo.jpeg" alt="João Paulo" >
         
         <p><h4><strong>João Paulo</strong></h4></p>
         <p><h4>Estudante de Análise e Desenvolvimento de Sistemas em Fatec - Praia Grande</h4></p>
+         <p><h4>Conheça também seus projetos no Github!</h4></p>
         <a href="https://github.com/10joaopaulo" <button class="btn btn-primary" >GitHub</button></a>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="thumbnail">
-        <img src="Imagens/camera-icon.png" alt="Letícia Santos" width="400" height="300">
+        <img src="Imagens/leticia.jpg" alt="Letícia Santos" >
         <p><h4><strong>Letícia Santos</strong></h4></p>
         <p><h4>Estudante de Análise e Desenvolvimento de Sistemas em Fatec - Praia Grande</h4></p>
+         <p><h4>Conheça também seus projetos no Github!</h4></p>
         <a href="https://github.com/LeticiaVSantos" <button class="btn btn-primary" >GitHub</button></a>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="thumbnail">
-        <img src="Imagens/camera-icon.png" alt="Victor Wander" width="400" height="300">
+        <img src="Imagens/victor.jpeg" alt="Victor Wander" >
         <p><h4><strong>Victor Wander</strong></h4></p>
         <p><h4>Estudante de Análise e Desenvolvimento de Sistemas em Fatec - Praia Grande</h4></p>
+         <p><h4>Conheça também seus projetos no Github!</h4></p>
         <a href="https://github.com/victorwander" <button class="btn btn-primary" >GitHub</button></a>
       </div>
     </div>

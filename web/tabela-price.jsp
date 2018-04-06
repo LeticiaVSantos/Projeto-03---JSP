@@ -51,7 +51,7 @@
                    <input type='text' class= form-control placeholder='%' name='juros'/><br></div>
                </div>
                   <input class="btn btn-primary" type="submit" value="Calcular">
-                  <a href="javascript:window.history.go(-1)">Voltar</a>
+                  
 
                   </form>
               <br>

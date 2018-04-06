@@ -12,8 +12,10 @@
       </button>
       <a class="navbar-brand" href="home.jsp">FinanceiraWeb</a>
     </div>
+      
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+          
         <li><a href="#home" href="home.jsp">Home</a></li>
         <li><a href="#calculadora" href="home.jsp">Sistema Financeiro</a></li>
         <li><a href="#sobre" href="home.jsp">Sobre</a></li>
